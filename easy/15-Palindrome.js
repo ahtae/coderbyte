@@ -6,10 +6,13 @@
 
 
 function Palindrome(str) {
+  let newStr = str.split(" ").join("");
 
-  // code goes here
-  return str;
+  for (let i = 0; i < newStr.length / 2; i++) {
+    if (newStr[i] !== newStr[newStr.length - i - 1]) return false;
+  }
 
+  return true;
 }
 
 console.log( Palindrome("never odd or even" ) );
