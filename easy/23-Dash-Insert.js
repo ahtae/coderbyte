@@ -5,14 +5,22 @@
 // Don't count zero as an odd number.
 
 function DashInsert(str) {
+  let transformedString = String(str);
+  let newStr = "";
 
-  // code goes here
-  return str;
+  for (let i = 0; i < transformedString.length; i++) {
+    let currentElement = Number(transformedString[i]);
+    let nextElement = Number(transformedString[i + 1]);
 
+    if (currentElement % 2 && nextElement % 2) newStr += currentElement + "-";
+    else newStr += currentElement;
+  }
+  return newStr;
 }
 
-console.log( DashInsert(99946) )
-console.log( DashInsert(56730) )
+console.log(DashInsert(99946));
+console.log(DashInsert(56730));
+console.log(DashInsert(55));
 
 // Correct Sample Outputs
 // ----------------------------------------------------------------------------
