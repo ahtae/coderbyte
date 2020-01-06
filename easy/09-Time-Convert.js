@@ -3,10 +3,10 @@
 // Separate the number of hours and minutes with a colon.
 
 function TimeConvert(num) {
+  let hours = Math.floor(num / 60);
+  let minutes = num % 60;
 
-  // code goes here
-  return num;
-
+  return `${hours}:${minutes}`;
 }
 
 console.log( TimeConvert(126) )
