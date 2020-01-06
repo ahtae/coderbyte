@@ -5,10 +5,24 @@
 // Then capitalize every vowel in this new string (a, e, i, o, u) and finally return this modified string.
 
 function LetterChanges(str) {
+  let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+  let vowels = "aeiou".split("");
+  let newStr = "";
 
-  // code goes here
-  return str;
+  for (let i = 0; i < str.length; i++) {
+    let currentLetter = str[i].toLowerCase();
+    let index = alphabet.indexOf(currentLetter);
 
+    let newIndex = (index + 1) % 26;
+    let changedLetter = alphabet[newIndex];
+
+    if (index !== -1) {
+      if (vowels.indexOf(changedLetter) !== -1) newStr += changedLetter.toUpperCase();
+      else newStr += changedLetter
+    } else newStr += currentLetter;
+  }
+
+  return newStr;
 }
 
 console.log( LetterChanges( "hello*3"  ) );
