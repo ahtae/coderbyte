@@ -3,10 +3,15 @@
 // have the function FirstReverse(str) take the str parameter being passed and return the string in reversed order.
 
 function FirstReverse(str) {
+  let reversedStr = "";
 
-  // code goes here
-  return str;
+  for (let i = 0; i < str.length; i++) {
+    let currentElement = str[i];
 
+    reversedStr = currentElement + reversedStr;
+  }
+
+  return reversedStr;
 }
 
 console.log( FirstReverse( "coderbyte" ) )
