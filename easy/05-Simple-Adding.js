@@ -4,10 +4,13 @@
 // For the test cases, the parameter num will be any number from 1 to 1000.
 
 function SimpleAdding(num) {
+  let sum = 0;
 
-  // code goes here
-  return num;
+  for (let i = 1; i <= num; i++) {
+    sum += i;
+  }
 
+  return sum;
 }
 
 console.log( SimpleAdding( 12 ) );
