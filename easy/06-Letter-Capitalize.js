@@ -4,9 +4,7 @@
 // Words will be separated by only one space.
 
 function LetterCapitalize(str) {
-
-  // code goes here
-  return str;
+  return str.split(" ").map(word => word[0].toUpperCase() + word.slice(1)).join(" ");
 
 }
 
