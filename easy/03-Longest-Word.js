@@ -6,10 +6,26 @@
 
 
 function LongestWord(sen) {
+  let words = sen.split(" ").map(word => filteredWord(word));
+  
+  return words.reduce((largestWord, currentWord) => {
+    if (largestWord.length >= currentWord.length) return largestWord;
+    else return currentWord;
+  });
 
-  // code goes here
-  return sen;
+  function filteredWord(word) {
+    let acceptedCharacters = "abcdefghijklmnopqrstuvwxyz0123456789".split("");
+    let filteredString = "";
 
+    for (let i = 0; i < word.length; i++) {
+      let currentLetter = word[i];
+
+      if (acceptedCharacters.indexOf(currentLetter.toLowerCase()) !== -1) {
+        filteredString += currentLetter;
+      }
+    }
+    return filteredString;
+  }
 }
 
 console.log( LongestWord( "fun&!! time"  ) )
