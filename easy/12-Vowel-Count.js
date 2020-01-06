@@ -5,10 +5,16 @@
 
 
 function VowelCount(str) {
+  let vowels = "aeiou".split("");
+  let count = 0;
 
-  // code goes here
-  return str;
+  for (let i = 0; i < str.length; i++) {
+    let currentLetter = str[i].toLowerCase();
 
+    if (vowels.indexOf(currentLetter) !== -1) ++count;
+  }
+
+  return count;
 }
 
 console.log( VowelCount("hello" ) )
