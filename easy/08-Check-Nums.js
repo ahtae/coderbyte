@@ -4,15 +4,12 @@
 // If the parameter values are equal to each other then return the string -1.
 
 function CheckNums(num1,num2) {
-
-  // code goes here
-  return num1 + num2;
-
+  return num2 > num1 ? true : num2 === num1 ? -1 : false;
 }
 
-console.log( CheckNums(3,119)  )
-console.log( CheckNums(67,0)  )
-
+console.log( CheckNums(3, 119));
+console.log( CheckNums(67, 0));
+console.log(CheckNums(67, 67));
 
 
 
