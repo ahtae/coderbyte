@@ -5,9 +5,26 @@
 
 
 function AlphabetSoup(str) {
+  let arr = str.split("");
+  let sorted = false;
 
-  // code goes here
-  return str;
+  while (!sorted) {
+    sorted = true;
+    
+    for (let i = 0; i < arr.length - 1; i++) {
+      let currentLetter = arr[i];
+      let nextLetter = arr[i + 1];
+
+      if (currentLetter > nextLetter) {
+        let placeholder = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = placeholder;
+        sorted = false;
+      }
+    }
+  }
+
+  return arr.join("");
 
 }
 
